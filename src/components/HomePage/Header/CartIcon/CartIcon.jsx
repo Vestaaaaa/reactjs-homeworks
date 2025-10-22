@@ -1,0 +1,11 @@
+export function CartIcon() {
+  return (
+    <a href="/cart" style={{ margin: "-9px 90px 0 20px" }}>
+      <img
+        src="/src/assets/cart.png"
+        style={{ paddingLeft: "100px", marginTop: "-10px" }}
+        alt="Cart"
+      />
+    </a>
+  );
+}
