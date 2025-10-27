@@ -1,13 +1,15 @@
 import "./App.css";
-import React from "react";
-import ItemList from "./components/ItemList";
+import { Header } from "./components/HomePage/Header/Header";
+import HomePage from "./pages/HomePage/HomePage";
+import { Footer } from "./components/HomePage/Footer/Footer";
 
 function App() {
   return (
-    <div>
-      <h1>React Homework 1</h1>
-      <ItemList />
-    </div>
+    <>
+      <Header />
+      <HomePage />
+      <Footer />
+    </>
   );
 }
 
