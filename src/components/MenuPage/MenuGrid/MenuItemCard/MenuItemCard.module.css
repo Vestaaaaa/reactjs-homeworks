@@ -1,0 +1,79 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  flex: 1 1 45%;
+  box-sizing: border-box;
+  width: 580px;
+  height: 200px;
+  background-color: white;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.imgCard {
+  width: 120px;
+  height: 120px;
+  padding-left: 20px;
+}
+
+.descriptionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.headerCard {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.6px;
+  margin: 0;
+}
+
+.paragraphCard {
+  color: #546285;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  margin: auto;
+}
+
+.counterAndCartCard {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.counter {
+  width: 60px;
+  height: 45px;
+  border-radius: 6px;
+  border: 1px solid #b9b9b9;
+  background-color: #fafafa;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonCard {
+  width: 147px;
+  height: 45px;
+  border-radius: 6px;
+  background-color: #35b8be;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+
+.price {
+  width: 200px;
+  padding: 0px 26px 115px 0px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #35b8be;
+}

@@ -1,4 +1,4 @@
-import styles from "../Header.module.css";
+import styles from "./Navigation.module.css";
 import { NavigationLink } from "../NavigationLink/NavigationLink";
 import { CartIcon } from "../CartIcon/CartIcon";
 

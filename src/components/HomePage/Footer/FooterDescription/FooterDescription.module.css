@@ -1,0 +1,11 @@
+.footerDescription {
+  height: 150px;
+  width: 235px;
+  gap: 20px;
+  position: relative;
+}
+
+.description {
+  color: #546285;
+  position: relative;
+}

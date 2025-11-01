@@ -1,4 +1,5 @@
 import styles from "./Footer.module.css";
+import backgroundDots from "../../../assets/background-dots.png";
 import { FooterColumn } from "./FooterColumn/FooterColumn";
 import { FooterDescription } from "./FooterDescription/FooterDescription";
 import { FooterEnding } from "./FooterEnding/FooterEnding";
@@ -16,10 +17,10 @@ const columnsData = [
   {
     title: "Template",
     links: [
-      { href: "/", label: "Style Guide" },
-      { href: "/", label: "Changelog" },
-      { href: "/", label: "Licence" },
-      { href: "/", label: "Webflow University" },
+      { href: "https://www.google.com/", label: "Style Guide" },
+      { href: "https://www.google.com/", label: "Changelog" },
+      { href: "https://www.google.com/", label: "Licence" },
+      { href: "https://www.google.com/", label: "Webflow University" },
     ],
   },
   {
@@ -33,7 +34,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <img
         className={styles.backgroundDots}
-        src="/src/assets/background-dots.png"
+        src={backgroundDots}
         alt="Background Dots"
       />
       <div className={styles.mainContainer}>

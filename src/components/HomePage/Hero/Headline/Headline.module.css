@@ -1,0 +1,12 @@
+.h1Hp {
+  font-weight: 400;
+  font-size: 60px;
+  letter-spacing: 1.8px;
+  line-height: 60px;
+  height: 180px;
+  width: 545px;
+}
+
+.highlight {
+  color: #35b8be;
+}

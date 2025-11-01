@@ -12,47 +12,12 @@ a {
   min-height: 100vh;
 }
 
-.backgroundImg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .mainContent {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: row;
   padding: 100px 120px 0px 160px;
-}
-
-.h1Hp {
-  font-weight: 400;
-  font-size: 60px;
-  letter-spacing: 1.8px;
-  line-height: 60px;
-  height: 180px;
-  width: 545px;
-}
-
-.highlight {
-  color: #35b8be;
-}
-
-.pHp {
-  font-weight: 400;
-  font-size: 18px;
-  letter-spacing: 0.36px;
-  line-height: 24px;
-  height: 73px;
-  width: 539px;
-  color: #546285;
-  margin-bottom: 45px;
 }
 
 .orderButton {
@@ -64,12 +29,6 @@ a {
   color: white;
   font-size: 17px;
   margin-bottom: 20px;
-}
-
-.ranking {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 
 .pUnderRanking {

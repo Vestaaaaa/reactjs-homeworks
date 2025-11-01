@@ -1,4 +1,4 @@
-import styles from "../Footer.module.css";
+import styles from "./SocialMediaLinks.module.css";
 
 export function SocialMediaLinks({ links }) {
   return (
