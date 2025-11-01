@@ -1,4 +1,4 @@
-import styles from "../../../../pages/HomePage/HomePage.module.css";
+import styles from "./Headline.module.css";
 
 export function Headline() {
   return (

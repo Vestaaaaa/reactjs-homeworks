@@ -1,4 +1,4 @@
-import styles from "../Footer.module.css";
+import styles from "./FooterColumn.module.css";
 
 export function FooterColumn({ title, links }) {
   return (

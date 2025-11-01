@@ -1,0 +1,7 @@
+.socialMediaLinks {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-right: 170px;
+  position: relative;
+}

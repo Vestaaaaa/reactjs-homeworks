@@ -1,4 +1,4 @@
-import styles from "../../../../pages/HomePage/HomePage.module.css";
+import styles from "./Ranking.module.css";
 
 export function Ranking() {
   return (
