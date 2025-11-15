@@ -18,18 +18,6 @@
   z-index: 1;
 }
 
-.footerDescription {
-  height: 150px;
-  width: 235px;
-  gap: 20px;
-  position: relative;
-}
-
-.description {
-  color: #546285;
-  position: relative;
-}
-
 .footerColumns {
   display: flex;
   flex-direction: row;
@@ -37,39 +25,7 @@
   position: relative;
 }
 
-.footerBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  position: relative;
-}
-
-.footerTitle {
-  font-weight: 500;
-}
-
 .line {
   padding: 90px 120px 70px 120px;
   position: relative;
-}
-
-.footerEnding {
-  display: flex;
-  flex-direction: row;
-  padding: 0px 0px 70px 120px;
-  gap: 60px;
-  justify-content: space-between;
-  position: relative;
-}
-
-.socialMediaLinks {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  margin-right: 170px;
-  position: relative;
-}
-
-.highlight {
-  color: #35b8be;
 }

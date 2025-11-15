@@ -1,4 +1,4 @@
-import styles from "../Footer.module.css";
+import styles from "./FooterEnding.module.css";
 import { SocialMediaLinks } from "../SocialMediaLinks/SocialMediaLinks";
 
 const socialLinks = [

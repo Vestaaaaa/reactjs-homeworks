@@ -1,0 +1,21 @@
+.menuPage {
+  background-color: #f5fbfc;
+  clip-path: polygon(0 50px, 100% 0, 100% 100%, 0% 100%);
+  padding: 120px 120px 40px 120px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.seeMoreButton {
+  background-color: #35b8be;
+  border: none;
+  width: 193px;
+  height: 50px;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+}

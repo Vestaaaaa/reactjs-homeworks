@@ -1,0 +1,21 @@
+.categoryButtons {
+  display: flex;
+  gap: 30px;
+}
+
+.category-btn {
+  width: 147px;
+  height: 45px;
+  border-radius: 6px;
+  background-color: #f5fbfc;
+  border-color: #61728333;
+  color: #222222;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.active {
+  background-color: #35b8be;
+  color: white;
+}

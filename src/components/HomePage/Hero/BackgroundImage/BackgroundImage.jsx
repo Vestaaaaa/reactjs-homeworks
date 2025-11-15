@@ -1,4 +1,4 @@
-import styles from "../../../../pages/HomePage/HomePage.module.css";
+import styles from "./BackgroundImage.module.css";
 
 export function BackgroundImage() {
   return (

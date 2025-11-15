@@ -1,0 +1,12 @@
+.footerEnding {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 0px 70px 120px;
+  gap: 60px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.highlight {
+  color: #35b8be;
+}

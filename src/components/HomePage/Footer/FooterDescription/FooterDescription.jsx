@@ -1,4 +1,4 @@
-import styles from "../Footer.module.css";
+import styles from "./FooterDescription.module.css";
 
 export function FooterDescription() {
   return (
