@@ -4,8 +4,19 @@ import { BackgroundImage } from "../../components/HomePage/Hero/BackgroundImage/
 import { Headline } from "../../components/HomePage/Hero/Headline/Headline";
 import { DescriptionText } from "../../components/HomePage/Hero/DescriptionText/DescriptionText";
 import { Ranking } from "../../components/HomePage/Hero/Ranking/Ranking";
+import { useFetch } from "../../hooks/useFetch";
 
 function HomePage() {
+  const fetchWithLog = useFetch();
+
+  const handleTest = () => {
+    fetchWithLog({
+      url: "/fake-order",
+      method: "POST",
+      body: { items: ["pizza"], total: 20 },
+    });
+  };
+
   return (
     <div className={styles.homepageContainer}>
       <BackgroundImage />
@@ -14,7 +25,11 @@ function HomePage() {
         <div>
           <Headline />
           <DescriptionText />
-          <Button className={styles.orderButton}>Place an Order</Button>
+          <Button className={styles.orderButton} disabled>
+            Place an Order
+          </Button>
+
+          <button onClick={handleTest}>Test our useFetch</button>
 
           <Ranking />
           <p className={styles.pUnderRanking}>
