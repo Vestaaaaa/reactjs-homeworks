@@ -1,6 +1,6 @@
-export function Button({ className, children, ...props }) {
+export function Button({ className, disabled, children, ...props }) {
   return (
-    <button className={className} {...props}>
+    <button className={className} disabled={disabled} {...props}>
       {children}
     </button>
   );
