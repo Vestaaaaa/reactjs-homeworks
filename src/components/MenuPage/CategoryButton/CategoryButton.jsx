@@ -1,24 +1,22 @@
-import { useState } from "react";
 import styles from "./CategoryButton.module.css";
+import { Button } from "../../Button/Button";
 
-const categories = ["Dessert", "Dinner", "Breakfast"];
-
-export function CategoryButton() {
-  const [activeIndex, setActiveIndex] = useState(0);
+export function CategoryButton({ meals, selectedCategory, onCategoryChange }) {
+  const categories = [...new Set(meals.map((item) => item.category))];
   return (
     <div className={styles.categoryButtons}>
-      {categories.map((label, index) => (
-        <button
-          key={label}
+      {categories.map((cat) => (
+        <Button
+          key={cat}
           className={
-            index === activeIndex
+            selectedCategory === cat
               ? `${styles["category-btn"]} ${styles.active}`
               : styles["category-btn"]
           }
-          onClick={() => setActiveIndex(index)}
+          onClick={() => onCategoryChange(cat)}
         >
-          {label}
-        </button>
+          {cat}
+        </Button>
       ))}
     </div>
   );
