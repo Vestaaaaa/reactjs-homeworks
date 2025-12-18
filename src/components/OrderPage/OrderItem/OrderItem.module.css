@@ -1,0 +1,40 @@
+.card {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  align-items: center;
+  column-gap: 20px;
+  padding: 16px 24px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+}
+
+.quantity {
+  width: 35px;
+  height: 30px;
+  align-items: center;
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: #dddddd;
+  background-color: #fafafa;
+}
+
+.removeBtn {
+  width: 40px;
+  height: 35px;
+  opacity: 1;
+  border-radius: 6px;
+  border-width: 1px;
+  background-color: #27b4c4;
+  color: #ffffff;
+  border: none;
+}
+
+.price {
+  color: #27b4c4;
+}
