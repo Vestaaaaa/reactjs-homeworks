@@ -5,9 +5,15 @@ import { Headline } from "../../components/HomePage/Hero/Headline/Headline";
 import { DescriptionText } from "../../components/HomePage/Hero/DescriptionText/DescriptionText";
 import { Ranking } from "../../components/HomePage/Hero/Ranking/Ranking";
 import { useFetch } from "../../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
   const fetchWithLog = useFetch();
+  const navigate = useNavigate();
+
+  const handlePlaceOrder = () => {
+    navigate("/order");
+  };
 
   const handleTest = () => {
     fetchWithLog({
@@ -25,7 +31,7 @@ function HomePage() {
         <div>
           <Headline />
           <DescriptionText />
-          <Button className={styles.orderButton} disabled>
+          <Button className={styles.orderButton} onClick={handlePlaceOrder}>
             Place an Order
           </Button>
 
