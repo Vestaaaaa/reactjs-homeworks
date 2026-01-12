@@ -1,0 +1,36 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.homepageContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.mainContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 100px 120px 0px 160px;
+}
+
+.orderButton {
+  background-color: #35b8be;
+  border: none;
+  width: 193px;
+  height: 50px;
+  border-radius: 6px;
+  color: white;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.pUnderRanking {
+  margin: 0px;
+}

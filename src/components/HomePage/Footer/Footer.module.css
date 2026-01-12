@@ -1,0 +1,31 @@
+.footer {
+  background-color: #f5fbfc;
+}
+
+.backgroundDots {
+  margin-top: 140px;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 100px 0px 0px 120px;
+  gap: 300px;
+  position: relative;
+  z-index: 1;
+}
+
+.footerColumns {
+  display: flex;
+  flex-direction: row;
+  gap: 120px;
+  position: relative;
+}
+
+.line {
+  padding: 90px 120px 70px 120px;
+  position: relative;
+}
