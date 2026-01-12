@@ -1,0 +1,16 @@
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5fbfc;
+  font-family: Arial, sans-serif;
+}
+
+.loginTitle {
+  margin: 0 0 32px;
+  font-size: 32px;
+  color: #27b7c9;
+  font-weight: 500;
+}
