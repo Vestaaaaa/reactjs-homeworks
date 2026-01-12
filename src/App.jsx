@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 import { Header } from "./components/HomePage/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import { MenuPage } from "./pages/MenuPage/MenuPage";
@@ -9,7 +8,7 @@ import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { OrderPage } from "./pages/OrderPage/OrderPage";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const isAuth = useSelector((state) => state.auth.isAuth);
 
   const ProtectedRoute = ({ children }) => {
     return isAuth ? children : <Navigate to="/login" replace />;
@@ -22,7 +21,7 @@ function App() {
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/menu" element={<MenuPage />} />
-        <Route path="/login" element={<LoginPage setIsAuth={setIsAuth} />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route
           path="/order"
           element={
