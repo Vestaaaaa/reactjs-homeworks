@@ -4,11 +4,14 @@ import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import styles from "./LoginPage.module.css";
 import { LoginCard } from "../../components/LoginPage/LoginCard/LoginCard";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/authSlice";
 
-export function LoginPage({ setIsAuth }) {
+export function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,8 +26,12 @@ export function LoginPage({ setIsAuth }) {
       const user = userCredential.user;
       console.log("user created", user.uid);
 
-      setIsAuth(true);
-      console.log("set is Auth to true");
+      dispatch(
+        login({
+          uid: user.uid,
+          email: user.email,
+        })
+      );
       navigate("/order");
       console.log("after navigate");
     } catch (error) {
