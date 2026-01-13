@@ -1,0 +1,40 @@
+.orderPage {
+  min-height: 100vh;
+  padding: 60px 0 80px;
+  background: #f5fcff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  color: #27b4c4;
+  margin-bottom: 40px;
+}
+
+.list {
+  width: 80%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.bottomBlock {
+  width: 80%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .list,
+  .bottomBlock {
+    width: 95%;
+  }
+}

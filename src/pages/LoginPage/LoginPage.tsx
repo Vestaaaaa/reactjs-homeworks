@@ -4,13 +4,16 @@ import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import styles from "./LoginPage.module.css";
 import { LoginCard } from "../../components/LoginPage/LoginCard/LoginCard";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/authSlice";
 
-export function LoginPage({ setIsAuth }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export function LoginPage() {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("submit clicked", { email, password });
 
@@ -23,13 +26,20 @@ export function LoginPage({ setIsAuth }) {
       const user = userCredential.user;
       console.log("user created", user.uid);
 
-      setIsAuth(true);
-      console.log("set is Auth to true");
+      dispatch(
+        login({
+          uid: user.uid,
+          email: user.email,
+        })
+      );
       navigate("/order");
       console.log("after navigate");
-    } catch (error) {
-      console.error("login error:", error);
-      alert(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert("Произошла неизвестная ошибка");
+      }
     }
   };
 

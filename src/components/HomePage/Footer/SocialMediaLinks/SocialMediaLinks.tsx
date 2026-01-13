@@ -1,6 +1,16 @@
 import styles from "./SocialMediaLinks.module.css";
 
-export function SocialMediaLinks({ links }) {
+interface SocialLink {
+  href: string;
+  alt: string;
+  src: string;
+}
+
+interface SocialMediaLinksProps {
+  links: SocialLink[];
+}
+
+export function SocialMediaLinks({ links }: SocialMediaLinksProps) {
   return (
     <div className={styles.socialMediaLinks}>
       {links.map(({ href, alt, src }) => (
