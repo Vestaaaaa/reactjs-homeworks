@@ -1,7 +1,21 @@
 import { Button } from "../../../Button/Button";
 import styles from "./MenuItemCard.module.css";
 
-export function MenuItemCard({ meal, onAdd, count }) {
+interface Meal {
+  img: string;
+  name: string;
+  meal: string;
+  price: number | string;
+  id?: string | number;
+}
+
+interface MenuItemCardProps {
+  meal: Meal;
+  onAdd: () => void;
+  count: number;
+}
+
+export function MenuItemCard({ meal, onAdd, count }: MenuItemCardProps) {
   return (
     <div className={styles.card}>
       <img className={styles.imgCard} src={meal.img} alt={meal.name} />

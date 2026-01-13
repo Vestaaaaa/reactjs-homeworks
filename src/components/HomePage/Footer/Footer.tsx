@@ -4,7 +4,17 @@ import { FooterColumn } from "./FooterColumn/FooterColumn";
 import { FooterDescription } from "./FooterDescription/FooterDescription";
 import { FooterEnding } from "./FooterEnding/FooterEnding";
 
-const columnsData = [
+interface Link {
+  href: string;
+  label: string;
+}
+
+interface ColumnData {
+  title: string;
+  links: Link[];
+}
+
+const columnsData: ColumnData[] = [
   {
     title: "Company",
     links: [
