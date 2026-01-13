@@ -2,7 +2,13 @@ import styles from "./Navigation.module.css";
 import { NavigationLink } from "../NavigationLink/NavigationLink";
 import { CartIcon } from "../CartIcon/CartIcon";
 
-const links = [
+interface NavLink {
+  href: string;
+  label: string;
+  style: React.CSSProperties;
+}
+
+const links: NavLink[] = [
   {
     href: "/",
     label: "Home",

@@ -1,14 +1,21 @@
 import { useSelector, useDispatch } from "react-redux";
 import { changeQuantity, removeItem, clearCart } from "../../store/cartSlice";
 import styles from "./OrderPage.module.css";
-import { OrderItem } from "../../components/OrderPage/OrderItem/OrderItem";
-import { OrderForm } from "../../components/OrderPage/OrderForm/OrderForm";
+import { OrderItem } from "../../components/OrderPage/OrderItem/OrderItem.js";
+import { OrderForm } from "../../components/OrderPage/OrderForm/OrderForm.js";
+import { RootState } from "../../store/store.js";
 
 export function OrderPage() {
-  const items = useSelector((state) => state.cart.items);
+  const items = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
 
-  const handleOrder = ({ street, house }) => {
+  const handleOrder = ({
+    street,
+    house,
+  }: {
+    street: string;
+    house: string;
+  }) => {
     alert(`Order placed! Street: ${street}, house: ${house}`);
     dispatch(clearCart());
   };
@@ -22,7 +29,7 @@ export function OrderPage() {
           <OrderItem
             key={item.id}
             item={item}
-            onQuantityChange={(quantity) =>
+            onQuantityChange={(quantity: number) =>
               dispatch(
                 changeQuantity({
                   id: item.id,

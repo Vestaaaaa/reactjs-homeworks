@@ -2,15 +2,19 @@ import { Button } from "../../Button/Button";
 import { OrderLabel } from "../OrderLabel/OrderLabel";
 import styles from "./OrderForm.module.css";
 
-export function OrderForm({ onSubmit }) {
-  const handleSubmit = (e) => {
+interface OrderFormProps {
+  onSubmit: (data: { street: string; house: string }) => void;
+}
+
+export function OrderForm({ onSubmit }: OrderFormProps) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target;
-    const street = form.street.value;
-    const house = form.house.value;
+    const formData = new FormData(e.currentTarget);
+    const street = formData.get("street") as string;
+    const house = formData.get("house") as string;
 
     onSubmit({ street, house });
-    form.reset();
+    e.currentTarget.reset();
   };
 
   return (

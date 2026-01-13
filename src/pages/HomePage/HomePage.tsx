@@ -7,7 +7,7 @@ import { Ranking } from "../../components/HomePage/Hero/Ranking/Ranking";
 import { useFetch } from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 
-function HomePage() {
+export function HomePage() {
   const fetchWithLog = useFetch();
   const navigate = useNavigate();
 

@@ -1,7 +1,24 @@
 import { Button } from "../../Button/Button";
 import styles from "./OrderItem.module.css";
 
-export function OrderItem({ item, onQuantityChange, onRemove }) {
+interface OrderItemData {
+  image: string;
+  title: string;
+  price: number;
+  quantity: number;
+}
+
+interface OrderItemProps {
+  item: OrderItemData;
+  onQuantityChange: (quantity: number) => void;
+  onRemove: () => void;
+}
+
+export function OrderItem({
+  item,
+  onQuantityChange,
+  onRemove,
+}: OrderItemProps) {
   return (
     <div className={styles.card}>
       <img src={item.image} alt={item.title} className={styles.image} />

@@ -1,16 +1,21 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Header } from "./components/HomePage/Header/Header";
-import HomePage from "./pages/HomePage/HomePage";
-import { MenuPage } from "./pages/MenuPage/MenuPage";
-import { Footer } from "./components/HomePage/Footer/Footer";
-import { LoginPage } from "./pages/LoginPage/LoginPage";
-import { OrderPage } from "./pages/OrderPage/OrderPage";
+import { Header } from "./components/HomePage/Header/Header.js";
+import HomePage from "./pages/HomePage/HomePage.js";
+import { MenuPage } from "./pages/MenuPage/MenuPage.js";
+import { Footer } from "./components/HomePage/Footer/Footer.js";
+import { LoginPage } from "./pages/LoginPage/LoginPage.js";
+import { OrderPage } from "./pages/OrderPage/OrderPage.js";
+import { RootState } from "./store/store.js";
+
+interface ProtectedRouteProps {
+  children: React.ReactNode;
+}
 
 function App() {
-  const isAuth = useSelector((state) => state.auth.isAuth);
+  const isAuth = useSelector((state: RootState) => state.auth.isAuth);
 
-  const ProtectedRoute = ({ children }) => {
+  const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
     return isAuth ? children : <Navigate to="/login" replace />;
   };
 
