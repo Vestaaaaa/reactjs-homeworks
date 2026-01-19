@@ -1,8 +1,30 @@
 import { useCallback } from "react";
 
+interface FetchOptions {
+  url: string;
+  method?: string;
+  body?: any;
+}
+
+interface FetchResult {
+  status: number;
+}
+
+interface LogEntry {
+  url: string;
+  method: string;
+  body?: any;
+  status: number;
+  timestamp: number;
+}
+
 export function useFetch() {
   const fetchWithLog = useCallback(
-    async ({ url, method = "GET", body = null }) => {
+    async ({
+      url,
+      method = "GET",
+      body = null,
+    }: FetchOptions): Promise<FetchResult> => {
       let status = 200;
 
       try {
@@ -19,7 +41,9 @@ export function useFetch() {
 
       const logEntry = { url, method, body, status, timestamp: Date.now() };
 
-      const prev = JSON.parse(localStorage.getItem("api-log") || "[]");
+      const prev = JSON.parse(
+        localStorage.getItem("api-log") || "[]"
+      ) as LogEntry[];
       const next = [...prev, logEntry];
 
       localStorage.setItem("api-log", JSON.stringify(next));
