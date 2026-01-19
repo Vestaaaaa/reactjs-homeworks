@@ -2,6 +2,15 @@ import styles from "./LoginCard.module.css";
 import { Button } from "../../Button/Button";
 import { InputField } from "../InputField/InputField";
 
+interface LoginCardProps {
+  email: string;
+  setEmail: (value: string) => void;
+  password: string;
+  setPassword: (value: string) => void;
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => Promise<void>;
+  onCancel: () => void;
+}
+
 export function LoginCard({
   email,
   setEmail,
@@ -9,7 +18,7 @@ export function LoginCard({
   setPassword,
   handleSubmit,
   onCancel,
-}) {
+}: LoginCardProps) {
   return (
     <div className={styles.loginCard}>
       <form className={styles.loginForm} onSubmit={handleSubmit}>

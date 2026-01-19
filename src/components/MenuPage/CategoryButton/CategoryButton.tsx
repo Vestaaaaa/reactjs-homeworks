@@ -1,7 +1,21 @@
 import styles from "./CategoryButton.module.css";
 import { Button } from "../../Button/Button";
 
-export function CategoryButton({ meals, selectedCategory, onCategoryChange }) {
+interface Meal {
+  category: string;
+}
+
+interface CategoryButtonProps {
+  meals: Meal[];
+  selectedCategory: string;
+  onCategoryChange: (category: string) => void;
+}
+
+export function CategoryButton({
+  meals,
+  selectedCategory,
+  onCategoryChange,
+}: CategoryButtonProps) {
   const categories = [...new Set(meals.map((item) => item.category))];
   return (
     <div className={styles.categoryButtons}>

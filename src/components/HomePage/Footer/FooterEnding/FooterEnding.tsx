@@ -1,7 +1,13 @@
 import styles from "./FooterEnding.module.css";
 import { SocialMediaLinks } from "../SocialMediaLinks/SocialMediaLinks";
 
-const socialLinks = [
+interface SocialLink {
+  href: string;
+  alt: string;
+  src: string;
+}
+
+const socialLinks: SocialLink[] = [
   { href: "/", alt: "Instagram", src: "/src/assets/inst.png" },
   { href: "/", alt: "Twitter", src: "/src/assets/twitter.png" },
   { href: "/", alt: "YouTube", src: "/src/assets/youtube.png" },
