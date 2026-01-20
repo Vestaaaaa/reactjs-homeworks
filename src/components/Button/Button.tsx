@@ -3,17 +3,23 @@ interface ButtonProps {
   className?: string;
   disabled?: boolean;
   onClick?: () => void;
-  [key: string]: any;
+  type?: "button" | "submit" | "reset";
 }
 
 export function Button({
   className,
   disabled,
   children,
-  ...props
+  onClick,
+  type,
 }: ButtonProps) {
   return (
-    <button className={className} disabled={disabled} {...props}>
+    <button
+      className={className}
+      disabled={disabled}
+      onClick={onClick}
+      type={type}
+    >
       {children}
     </button>
   );

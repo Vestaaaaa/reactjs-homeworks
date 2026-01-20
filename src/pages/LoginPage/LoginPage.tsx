@@ -8,8 +8,8 @@ import { useDispatch } from "react-redux";
 import { login } from "../../store/authSlice";
 
 export function LoginPage() {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -21,7 +21,7 @@ export function LoginPage() {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
       );
       const user = userCredential.user;
       console.log("user created", user.uid);
@@ -30,7 +30,7 @@ export function LoginPage() {
         login({
           uid: user.uid,
           email: user.email,
-        })
+        }),
       );
       navigate("/order");
       console.log("after navigate");

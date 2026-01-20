@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] * {
+  color: #e0e0e0 !important;
+  background-color: #121212 !important;
+  border-color: #333333 !important;
+}
+
+[data-theme="dark"] {
+  --bg-color: #000000;
+}
+
+html,
+body,
+#root {
+  background: var(--bg-color) !important;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #00bec1 !important;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #00a4a8 !important;
+}
+
+/* сохр зеленый цвет для Home*/
+[href="/"],
+a[href="/"],
+.navigation a[href="/"],
+.HomeLink {
+  color: #00bec1 !important;
+  text-decoration: none !important;
+}
+
+/* КНОПКИ на всех страницах */
+[data-theme="dark"] button,
+[data-theme="dark"] [role="button"] {
+  background: #00bec1 !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+}
+
+/* ИНПУТЫ на всех страницах */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background: #1e1e2e !important;
+  color: #e0e0e0 !important;
+  border-color: #404040 !important;
+}
