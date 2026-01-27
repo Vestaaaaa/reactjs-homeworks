@@ -1,11 +1,7 @@
 import styles from "./DescriptionText.module.css";
+import { useLanguageContext } from "../../../../context/LanguageContext";
 
 export function DescriptionText() {
-  return (
-    <p className={styles.pHp}>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500.
-    </p>
-  );
+  const { t } = useLanguageContext();
+  return <p className={styles.pHp}>{t("homePage.description")}</p>;
 }

@@ -3,6 +3,7 @@ import backgroundDots from "../../../assets/background-dots.png";
 import { FooterColumn } from "./FooterColumn/FooterColumn";
 import { FooterDescription } from "./FooterDescription/FooterDescription";
 import { FooterEnding } from "./FooterEnding/FooterEnding";
+import { useLanguageContext } from "../../../context/LanguageContext";
 
 interface Link {
   href: string;
@@ -16,30 +17,31 @@ interface ColumnData {
 
 const columnsData: ColumnData[] = [
   {
-    title: "Company",
+    title: "footer.company",
     links: [
-      { href: "/", label: "Home" },
-      { href: "/order", label: "Order" },
-      { href: "/faq", label: "FAQ" },
-      { href: "/contact", label: "Contact" },
+      { href: "/", label: "footer.home" },
+      { href: "/order", label: "footer.order" },
+      { href: "/faq", label: "footer.faq" },
+      { href: "/contact", label: "footer.contact" },
     ],
   },
   {
-    title: "Template",
+    title: "footer.template",
     links: [
-      { href: "https://www.google.com/", label: "Style Guide" },
-      { href: "https://www.google.com/", label: "Changelog" },
-      { href: "https://www.google.com/", label: "Licence" },
-      { href: "https://www.google.com/", label: "Webflow University" },
+      { href: "https://www.google.com/", label: "footer.styleGuide" },
+      { href: "https://www.google.com/", label: "footer.changelog" },
+      { href: "https://www.google.com/", label: "footer.licence" },
+      { href: "https://www.google.com/", label: "footer.webflowUniversity" },
     ],
   },
   {
-    title: "Flowbase",
-    links: [{ href: "/", label: "More Cloneables" }],
+    title: "footer.flowbase",
+    links: [{ href: "/", label: "footer.moreCloneables" }],
   },
 ];
 
 export function Footer() {
+  const { t } = useLanguageContext();
   return (
     <footer className={styles.footer}>
       <img
@@ -52,7 +54,7 @@ export function Footer() {
 
         <div className={styles.footerColumns}>
           {columnsData.map(({ title, links }) => (
-            <FooterColumn key={title} title={title} links={links} />
+            <FooterColumn key={title} title={t(title)} links={links} />
           ))}
         </div>
       </div>

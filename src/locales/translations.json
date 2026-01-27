@@ -1,0 +1,110 @@
+{
+  "en": {
+    "header": {
+      "home": "Home",
+      "menu": "Menu",
+      "company": "Company",
+      "login": "Login"
+    },
+    "homePage": {
+      "title1": "Beautiful food & takeaway,",
+      "title2": "delivered",
+      "title3": "to your door.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.",
+      "textButton": "Place an Order",
+      "ranking1": "4.8 out of 5",
+      "ranking2": "based on 2000+ reviews"
+    },
+    "footer": {
+      "footerDesc": "Takeaway & Delivery template for small - medium businesses.",
+      "company": "Company",
+      "home": "Home",
+      "order": "Order",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "template": "Template",
+      "styleGuide": "Style Guide",
+      "changelog": "Changelog",
+      "licence": "Licence",
+      "webflowUniversity": "Webflow University",
+      "flowbase": "Flowbase",
+      "moreCloneables": "More Cloneables",
+      "textFooter1": "Built by ",
+      "textFooter2": "Flowbase ",
+      "textFooter3": "Powered by",
+      "textFooter4": "Webflow"
+    }
+  },
+  "ru": {
+    "header": {
+      "home": "Главная",
+      "menu": "Меню",
+      "company": "Компания",
+      "login": "Войти"
+    },
+    "homePage": {
+      "title1": "Вкусная еда и доставка",
+      "title2": "прямо",
+      "title3": "к вашей двери!",
+      "description": "Lorem Ipsum — это просто фиктивный текст печати и верстки. Lorem Ipsum используется c 1500-x годов.",
+      "textButton": "Оформить заказ",
+      "ranking1": "4.8 из 5",
+      "ranking2": "на основе 2000+ отзывов"
+    },
+    "footer": {
+      "footerDesc": "Шаблон для доставки еды для малого и среднего бизнеса.",
+      "company": "Компания",
+      "home": "Главная",
+      "order": "Заказ",
+      "faq": "Вопросы",
+      "contact": "Контакты",
+      "template": "Шаблон",
+      "styleGuide": "Гайд по стилю",
+      "changelog": "Журнал изменений",
+      "licence": "Лицензия",
+      "webflowUniversity": "Webflow University",
+      "flowbase": "Flowbase",
+      "moreCloneables": "Больше шаблонов",
+      "textFooter": "Создано с помощью",
+      "textFooter2": "Flowbase",
+      "textFooter3": "на платформе",
+      "textFooter4": "Webflow"
+    }
+  },
+  "by": {
+    "header": {
+      "home": "Галоўная",
+      "menu": "Меню",
+      "company": "Кампанія",
+      "login": "Увайсці"
+    },
+    "homePage": {
+      "title1": "Смачная ежа і дастаўка",
+      "title2": "прама",
+      "title3": "да вашых дзвярэй!",
+      "description": "Lorem Ipsum — гэта просты выдуманы тэкст для друку і версткі. Lorem Ipsum выкарыстоўваецца з 1500-х гадоў.",
+      "textButton": "Аформіць заказ",
+      "ranking1": "4.8 з 5",
+      "ranking2": "на аснове 2000+ водгукаў"
+    },
+    "footer": {
+      "footerDesc": "Шаблон для дастаўкі ежы для малога і сярэдняга бізнэсу.",
+      "company": "Кампанія",
+      "home": "Галоўная",
+      "order": "Замоўленне",
+      "faq": "Пытанні",
+      "contact": "Кантакты",
+      "template": "Шаблон",
+      "styleGuide": "Гайд па стылю",
+      "changelog": "Журнал змен",
+      "licence": "Ліцэнзія",
+      "webflowUniversity": "Webflow University",
+      "flowbase": "Flowbase",
+      "moreCloneables": "Больш шаблонаў",
+      "textFooter": "Створана з дапамогай",
+      "textFooter2": "Flowbase",
+      "textFooter3": "на платформе",
+      "textFooter4": "Webflow"
+    }
+  }
+}

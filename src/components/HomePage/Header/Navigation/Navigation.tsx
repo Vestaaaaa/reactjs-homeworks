@@ -1,6 +1,7 @@
 import styles from "./Navigation.module.css";
 import { NavigationLink } from "../NavigationLink/NavigationLink";
 import { CartIcon } from "../CartIcon/CartIcon";
+import { useLanguageContext } from "../../../../context/LanguageContext";
 
 interface NavLink {
   href: string;
@@ -10,28 +11,29 @@ interface NavLink {
 const links: NavLink[] = [
   {
     href: "/",
-    label: "Home",
+    label: "header.home",
   },
   {
     href: "/menu",
-    label: "Menu",
+    label: "header.menu",
   },
   {
     href: "/company",
-    label: "Company",
+    label: "header.company",
   },
   {
     href: "/login",
-    label: "Login",
+    label: "header.login",
   },
 ];
 
 export function Navigation() {
+  const { t } = useLanguageContext();
   return (
     <nav className={styles.navigation}>
       {links.map(({ href, label }) => (
         <NavigationLink key={href} href={href}>
-          {label}
+          {t(label)}
         </NavigationLink>
       ))}
       <CartIcon />

@@ -1,5 +1,6 @@
 import styles from "./FooterEnding.module.css";
 import { SocialMediaLinks } from "../SocialMediaLinks/SocialMediaLinks";
+import { useLanguageContext } from "../../../../context/LanguageContext";
 
 interface SocialLink {
   href: string;
@@ -14,11 +15,14 @@ const socialLinks: SocialLink[] = [
 ];
 
 export function FooterEnding() {
+  const { t } = useLanguageContext();
   return (
     <div className={styles.footerEnding}>
       <p>
-        Built by <span className={styles.highlight}>Flowbase</span> Powered by{" "}
-        <span className={styles.highlight}>Webflow</span>
+        {t("footer.textFooter1")}
+        <span className={styles.highlight}>{t("footer.textFooter2")}</span>
+        {t("footer.textFooter3")}{" "}
+        <span className={styles.highlight}>{t("footer.textFooter4")}</span>
       </p>
       <SocialMediaLinks links={socialLinks} />
     </div>

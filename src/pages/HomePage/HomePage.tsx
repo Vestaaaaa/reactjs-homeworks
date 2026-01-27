@@ -6,10 +6,12 @@ import { DescriptionText } from "../../components/HomePage/Hero/DescriptionText/
 import { Ranking } from "../../components/HomePage/Hero/Ranking/Ranking";
 import { useFetch } from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
+import { useLanguageContext } from "../../context/LanguageContext";
 
 export function HomePage() {
   const fetchWithLog = useFetch();
   const navigate = useNavigate();
+  const { t } = useLanguageContext();
 
   const handlePlaceOrder = () => {
     navigate("/order");
@@ -32,15 +34,13 @@ export function HomePage() {
           <Headline />
           <DescriptionText />
           <Button className={styles.orderButton} onClick={handlePlaceOrder}>
-            Place an Order
+            {t("homePage.textButton")}
           </Button>
-
-          <button onClick={handleTest}>Test our useFetch</button>
 
           <Ranking />
           <p className={styles.pUnderRanking}>
-            <span className={styles.highlight}>4.8 out of 5 </span> based on
-            2000+ reviews
+            <span className={styles.highlight}>{t("homePage.ranking1")}</span>{" "}
+            {t("homePage.ranking2")}
           </p>
         </div>
         <img alt="Appetizing meal banner" src="/src/assets/main-img.png" />

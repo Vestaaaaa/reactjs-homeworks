@@ -27,19 +27,38 @@ body,
   transition: background-color 0.3s ease;
 }
 
-.theme-toggle {
+.theme-toggle,
+.language-toggle {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid #00bec1 !important;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   cursor: pointer;
+  z-index: 1000;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.theme-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1000;
+}
+
+.language-toggle {
+  position: fixed;
+  top: 80px;
+  right: 10px;
 }
 
 .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #00a4a8 !important;
+}
+
+.language-toggle:hover {
   background: rgba(255, 255, 255, 0.2);
   border-color: #00a4a8 !important;
 }
