@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/cartSlice";
 import styles from "./MenuPage.module.css";
 import { Headline } from "../../components/MenuPage/Headline/Headline.js";
 import { DescriptionText } from "../../components/MenuPage/DescriptionText/DescriptionText.js";
@@ -6,7 +8,7 @@ import { CategoryButton } from "../../components/MenuPage/CategoryButton/Categor
 import { MenuGrid } from "../../components/MenuPage/MenuGrid/MenuGrid.js";
 import { Button } from "../../components/Button/Button.js";
 
-interface Meal {
+export interface MealType {
   id: string | number;
   img: string;
   name: string;
@@ -18,21 +20,22 @@ interface Meal {
 const PAGE_SIZE = 6;
 
 export function MenuPage() {
-  const [meals, setMeals] = useState<Meal[]>([]);
+  const [meals, setMeals] = useState<MealType[]>([]);
   const [visibleMeals, setVisibleMeals] = useState(PAGE_SIZE);
-  const [cart, setCart] = useState<Record<string, number>>({});
   const [selectedCategory, setSelectedCategory] = useState("Dessert");
   const [error, setError] = useState<string | null>(null);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     fetch("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals")
-      .then((res): Promise<Meal[]> => {
+      .then((res): Promise<MealType[]> => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         return res.json();
       })
-      .then((data: Meal[]) => {
+      .then((data: MealType[]) => {
         setMeals(data);
         setError(null);
       })
@@ -41,11 +44,19 @@ export function MenuPage() {
       });
   }, []);
 
-  const addToCart = (id: string | number) => {
-    setCart((prev) => ({
-      ...prev,
-      [id]: (prev[id] || 0) + 1,
-    }));
+  const addToCartHandler = (meal: MealType) => {
+    dispatch(
+      addToCart({
+        id: Number(meal.id),
+        title: meal.name || meal.meal,
+        price:
+          typeof meal.price === "string"
+            ? parseFloat(meal.price)
+            : Number(meal.price),
+        quantity: 1,
+        image: meal.img,
+      }),
+    );
   };
 
   const handleSeeMore = () => {
@@ -58,7 +69,7 @@ export function MenuPage() {
   };
 
   const filteredMeals = meals.filter(
-    (item) => item.category === selectedCategory
+    (item) => item.category === selectedCategory,
   );
 
   return (
@@ -73,8 +84,7 @@ export function MenuPage() {
       />
       <MenuGrid
         meals={filteredMeals.slice(0, visibleMeals)}
-        addToCart={addToCart}
-        cart={cart}
+        addToCart={addToCartHandler}
       />
       {visibleMeals < filteredMeals.length && (
         <Button className={styles.seeMoreButton} onClick={handleSeeMore}>

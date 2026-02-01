@@ -9,6 +9,11 @@ export function OrderPage() {
   const items = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
 
+  console.log("=== ORDER PAGE DEBUG ===");
+  console.log("Items from Redux:", items);
+  console.log("Items length:", items.length);
+  console.log("Items details:", JSON.stringify(items, null, 2));
+
   const handleOrder = ({
     street,
     house,
@@ -34,7 +39,7 @@ export function OrderPage() {
                 changeQuantity({
                   id: item.id,
                   quantity,
-                })
+                }),
               )
             }
             onRemove={() => dispatch(removeItem(item.id))}

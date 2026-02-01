@@ -2,6 +2,7 @@ import { Button } from "../../Button/Button";
 import styles from "./OrderItem.module.css";
 
 interface OrderItemData {
+  id?: number;
   image: string;
   title: string;
   price: number;
